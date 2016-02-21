@@ -45,3 +45,8 @@ spare method }  these 2 can check the store array
 strike method }
 10th frame method
 actual bowl method
+
+mid way ideas
+
+- break frame +1 after frame 10 - end game method?
+- carry over array for strikes + spares

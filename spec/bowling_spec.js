@@ -10,6 +10,13 @@ describe('Game', function() {
     });
   });
 
+  // #Need to work out how to use spies for this
+  // describe('#play', function(){
+  //   it('Correctly calls the frame turn one method', function(){
+  //     game.turnInFrame = 1;
+  //   });
+  // });
+
   describe('#bowl', function(){
 
     it('Returns a random number between 1 and 10', function(){
@@ -22,7 +29,13 @@ describe('Game', function() {
     it('Switches to the next frame', function(){
       game.switchFrame();
       expect(game.currentFrame).toEqual(2);
-    })
+    });
+
+    it('Resets the pins to 10', function(){
+      game.pinsLeft = 0;
+      game.switchFrame();
+      expect(game.pinsLeft).toEqual(10);
+    });
   });
 
   describe('#deductPins', function(){
@@ -33,17 +46,25 @@ describe('Game', function() {
     });
   });
 
+  describe('#resetPins', function(){
+    it('Resets the pin count to 10', function(){
+      game.pinsLeft = 0;
+      game.resetPins();
+      expect(game.pinsLeft).toEqual(10);
+    });
+  });
+
   describe('#switchTurn', function(){
 
     it('Switches turn in a frame from one to two', function(){
       game.switchTurn();
-      expect(game.frameTurn).toEqual(2);
+      expect(game.turnInFrame).toEqual(2);
     });
 
     it('Switches turn from two to one', function(){
-      game.frameTurn = 2;
+      game.turnInFrame = 2;
       game.switchTurn();
-      expect(game.frameTurn).toEqual(1);
+      expect(game.turnInFrame).toEqual(1);
     });
   });
 
