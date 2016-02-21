@@ -43,3 +43,5 @@ current frame index
 frame score array?
 spare method }  these 2 can check the store array
 strike method }
+10th frame method
+actual bowl method
