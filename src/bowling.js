@@ -34,11 +34,19 @@ Game.prototype.addToFrameScore = function (result) {
   this.frameScore += result;
 };
 
-Game.prototype.strikeCheck = function(bowl) {
-  if(bowl === 10) {
+Game.prototype.strikeCheck = function(bowlResult) {
+  if(bowlResult === 10) {
     return true;
   } else {
     return false;
+  }
+};
+
+Game.prototype.spareCheck = function(bowlResult) {
+  if (this.pinsLeft === 0) {
+    return true
+  } else {
+    return false
   }
 };
 // Game.prototype.frameTurnOne = function (){

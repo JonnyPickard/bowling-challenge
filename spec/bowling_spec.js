@@ -61,4 +61,13 @@ describe('Game', function() {
       expect(game.strikeCheck(10)).toEqual(true);
     });
   });
+
+  describe('#spareCheck', function(){
+
+    it('correctly identifies a spare', function(){
+      game.currentFrame = 2;
+      game.pinsLeft = 0;
+      expect(game.spareCheck()).toEqual(true);
+    });
+  });
 });
