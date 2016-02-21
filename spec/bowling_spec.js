@@ -32,4 +32,33 @@ describe('Game', function() {
       expect(game.pinsLeft).toEqual(5);
     });
   });
+
+  describe('#switchTurn', function(){
+
+    it('Switches turn in a frame from one to two', function(){
+      game.switchTurn();
+      expect(game.frameTurn).toEqual(2);
+    });
+
+    it('Switches turn from two to one', function(){
+      game.frameTurn = 2;
+      game.switchTurn();
+      expect(game.frameTurn).toEqual(1);
+    });
+  });
+
+  describe('#addToFrameScore', function(){
+
+    it('Adds the current result to the frame score', function(){
+      game.addToFrameScore(5);
+      expect(game.frameScore).toContain(5);
+    });
+  });
+
+  describe('#strikeCheck', function(){
+
+    it('correctly identifies a strike', function(){
+      expect(game.strikeCheck(10)).toEqual(true);
+    });
+  });
 });
