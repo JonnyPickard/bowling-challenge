@@ -24,16 +24,16 @@ describe('Game', function() {
     });
   });
 
-  describe('#switchFrame', function(){
+  describe('#switchToNextFrame', function(){
 
     it('Switches to the next frame', function(){
-      game.switchFrame();
+      game.switchToNextFrame();
       expect(game.currentFrame).toEqual(2);
     });
 
     it('Resets the pins to 10', function(){
       game.pinsLeft = 0;
-      game.switchFrame();
+      game.switchToNextFrame();
       expect(game.pinsLeft).toEqual(10);
     });
   });
@@ -54,16 +54,16 @@ describe('Game', function() {
     });
   });
 
-  describe('#switchTurn', function(){
+  describe('#switchTurnInFrame', function(){
 
     it('Switches turn in a frame from one to two', function(){
-      game.switchTurn();
+      game.switchTurnInFrame();
       expect(game.turnInFrame).toEqual(2);
     });
 
     it('Switches turn from two to one', function(){
       game.turnInFrame = 2;
-      game.switchTurn();
+      game.switchTurnInFrame();
       expect(game.turnInFrame).toEqual(1);
     });
   });

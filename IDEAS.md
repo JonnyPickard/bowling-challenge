@@ -50,3 +50,6 @@ mid way ideas
 
 - break frame +1 after frame 10 - end game method?
 - carry over array for strikes + spares
+- 3 framescore arrays incase of 3 strikes in a row. Most possible multipliers should cover 3 frames
+- if strike / spare the array should pop off into a holding array.
+- 

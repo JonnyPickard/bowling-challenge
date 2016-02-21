@@ -33,7 +33,7 @@ Game.prototype.bowl = function(){
   return Math.floor((Math.random() * this.pinsLeft) + 1);
 };
 
-Game.prototype.switchFrame = function () {
+Game.prototype.switchToNextFrame = function () {
   this.currentFrame += 1;
   this.resetPins();
 };
@@ -46,7 +46,7 @@ Game.prototype.deductPins = function (number) {
   this.pinsLeft -= number;
 }
 
-Game.prototype.switchTurn = function () {
+Game.prototype.switchTurnInFrame = function () {
   if (this.turnInFrame === 1) {
     this.turnInFrame += 1;
   } else {
