@@ -55,6 +55,21 @@ describe('Game', function() {
     });
   });
 
+  describe('#saveFrameScore', function() {
+
+    it('Correctly saves the total frame score', function() {
+      game.frameScore = [4, 3];
+      game.saveFrameScore();
+      expect(game.score).toContain([4, 3]);
+    });
+
+    it('Correctly resets the frame score back to 0', function() {
+      game.frameScore = [4, 3];
+      game.saveFrameScore();
+      expect(game.frameScore).not.toContain([4, 3]);
+    });
+  });
+
   describe('#strikeCheck', function(){
 
     it('correctly identifies a strike', function(){

@@ -4,6 +4,7 @@ function Game() {
   this.pinsLeft = 10;
   this.frameTurn = 1;
   this.frameScore = [];
+  this.score = [];
 }
 
 Game.prototype.setName = function (name) {
@@ -34,6 +35,11 @@ Game.prototype.addToFrameScore = function (result) {
   this.frameScore += result;
 };
 
+Game.prototype.saveFrameScore = function () {
+  this.score.push(this.frameScore);
+  this.frameScore = 0;
+};
+
 Game.prototype.strikeCheck = function(bowlResult) {
   if(bowlResult === 10) {
     return true;
@@ -49,6 +55,8 @@ Game.prototype.spareCheck = function(bowlResult) {
     return false
   }
 };
+
+
 // Game.prototype.frameTurnOne = function (){
 //   var score = Game.bowl();
 //   this.pinsLeft -= score;
