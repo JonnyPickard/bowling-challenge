@@ -10,13 +10,6 @@ describe('Game', function() {
     });
   });
 
-  // #Need to work out how to use spies for this
-  // describe('#play', function(){
-  //   it('Correctly calls the frame turn one method', function(){
-  //     game.turnInFrame = 1;
-  //   });
-  // });
-
   describe('#bowl', function(){
 
     it('Returns a random number between 1 and 10', function(){
@@ -104,6 +97,12 @@ describe('Game', function() {
       game.currentFrame = 2;
       game.pinsLeft = 0;
       expect(game.spareCheck()).toEqual(true);
+    });
+  });
+
+  describe('#newFrame', function(){
+    it('creates a new frame objects', function(){
+
     });
   });
 });

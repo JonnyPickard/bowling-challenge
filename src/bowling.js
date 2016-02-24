@@ -11,30 +11,23 @@ function Frame() {
   this.scores = [];
 }
 
+function Play() {
+//could add strikeCheck
+//could add spareCheck
+//could add actual bowling functionality
+}
+
 //game methods
 
 Game.prototype.setName = function (name) {
   this.name = name;
 };
 
-// #Still needs testing properly
-// Game.prototype.play = function () {
-//   if (this.turnInFrame === 1) {
-//     this.playFrameOne();
-//   } else {
-//     this.playFrameTwo();
-//   }
-// };
-
-// #Next thing to implement
-// Game.prototype.playFrameOne = function () {
 //
-// }
+Game.prototype.counter = function() {
+  //return frame, bowl number
+}
 //
-// Game.prototype.playFrameTwo = function () {
-//
-// }
-
 Game.prototype.bowl = function(){
   return Math.floor((Math.random() * this.pinsLeft) + 1);
 };
@@ -85,6 +78,18 @@ Game.prototype.spareCheck = function(bowlResult) {
   }
 };
 
+//
+Game.prototype.newFrame = function() {
+  var frame = Frame.new();
+  frame.setNumber(this.currentFrame);
+  this.saveFrameToScore(frame);
+}
+//
+//
+Game.prototype.saveFrameToScore = function (frame) {
+  this.score.push(frame)
+}
+//
 //frame methods
 
 Frame.prototype.setNumber = function(number) {
@@ -108,3 +113,20 @@ Frame.prototype.bowlOne = function() {
 Frame.prototype.bowlTwo = function() {
   return this.scores[1];
 };
+
+//
+Frame.prototype.setStatusStrike = function () {
+  this.strike = true
+}
+//
+//
+Frame.prototype.setStatusSpare = function () {
+  this.spare = true
+}
+//
+//
+Frame.prototype.bowlsLeft = function () {
+//  if strike = +2
+//  if spare = + 1
+}
+//
