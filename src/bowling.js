@@ -7,6 +7,12 @@ function Game() {
   this.score = [];
 }
 
+function Frame() {
+  this.scores = [];
+}
+
+//game methods
+
 Game.prototype.setName = function (name) {
   this.name = name;
 };
@@ -77,4 +83,28 @@ Game.prototype.spareCheck = function(bowlResult) {
   } else {
     return false
   }
+};
+
+//frame methods
+
+Frame.prototype.setNumber = function(number) {
+  this.number = number;
+}
+
+Frame.prototype.addScore = function(score) {
+  this.scores += score;
+}
+
+Frame.prototype.totalScore = function() {
+  this.total = this.scores.reduce(function(a, b) {
+    return a + b;
+  });
+}
+
+Frame.prototype.bowlOne = function() {
+  return this.scores[0];
+};
+
+Frame.prototype.bowlTwo = function() {
+  return this.scores[1];
 };

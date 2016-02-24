@@ -107,3 +107,43 @@ describe('Game', function() {
     });
   });
 });
+
+describe('Frame', function() {
+  var frame = new Frame();
+
+  describe('#setNumber', function() {
+    it('allows you to set the frame number', function() {
+      frame.setNumber(7);
+      expect(frame.number).toEqual(7);
+    });
+  });
+
+  describe('#addScore', function(){
+    it('allows you to input a score', function() {
+      frame.addScore(4);
+      expect(frame.scores).toContain(4);
+    });
+  });
+
+  describe('#totalScore', function(){
+    it('allows you to total the frames score', function(){
+      frame.scores = [4,5]
+      frame.totalScore();
+      expect(frame.total).toEqual(9);
+    });
+  });
+
+  describe('#bowlOne', function(){
+    it('correctly returns bowl one of a frame', function(){
+      frame.scores = [4, 5];
+      expect(frame.bowlOne()).toEqual(4);
+    });
+  });
+
+  describe('#bowlTwo', function(){
+    it('correctly returns bow two of a frame', function(){
+      frame.scores = [4, 5];
+      expect(frame.bowlTwo()).toEqual(5);
+    });
+  });
+});
